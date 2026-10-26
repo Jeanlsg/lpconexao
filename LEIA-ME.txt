@@ -1,0 +1,82 @@
+CONEXÃO ASSESSORIA — SITE INSTITUCIONAL
+Pacote de publicação · versão de 26/10/2026
+=========================================================
+
+O QUE TEM AQUI
+---------------------------------------------------------
+conexao-site/              -> tudo o que vai para a hospedagem
+  index.html               -> página principal
+  privacidade.html         -> Política de Privacidade (LGPD)
+  termos.html              -> Termos de Uso
+  404.html                 -> página de "não encontrado"
+  .htaccess                -> segurança, HTTPS, cache (arquivo oculto!)
+  robots.txt / sitemap.xml -> para o Google
+  favicon.ico              -> ícone da aba
+  .well-known/security.txt -> contato para reporte de falhas
+  assets/img      -> fotos (WebP), logo e imagem de compartilhamento
+  assets/logos    -> logos dos clientes
+  assets/icons    -> ícones (favicon, iPhone, Android)
+
+
+ANTES DE SUBIR (OBRIGATÓRIO)
+---------------------------------------------------------
+1. Trocar o domínio provisório.
+   Nos arquivos abaixo, use "Localizar e substituir" e troque
+       https://SEU-DOMINIO.com.br
+   pelo domínio real (ex.: https://conexaoassessoria.com.br), sem barra no final:
+       index.html · privacidade.html · termos.html
+       robots.txt · sitemap.xml · .well-known/security.txt
+
+2. Revisão jurídica da Política de Privacidade e dos Termos de Uso.
+
+
+PUBLICAR NA HOSTINGER (ou qualquer hospedagem Apache/LiteSpeed)
+---------------------------------------------------------
+1. hPanel > Sites > Gerenciador de Arquivos > pasta public_html.
+2. Envie TODO o conteúdo de "conexao-site" para dentro de public_html
+   (não a pasta em si, e sim o que está dentro dela).
+   Atenção: .htaccess e .well-known são arquivos ocultos. Ative
+   "mostrar arquivos ocultos" para conferir que subiram.
+3. hPanel > Segurança > SSL: ative o certificado gratuito.
+4. Aponte o domínio (DNS) para a hospedagem, se ainda não estiver.
+
+
+CHECKLIST DE SEGURANÇA
+---------------------------------------------------------
+[x] Site estático: sem banco de dados, sem login, sem formulário no servidor
+    (os formulários só abrem o WhatsApp com os dados preenchidos)
+[x] HTTPS forçado + HSTS
+[x] Content-Security-Policy (bloqueia scripts de terceiros não autorizados)
+[x] Proteção contra clickjacking (X-Frame-Options / frame-ancestors)
+[x] X-Content-Type-Options, Referrer-Policy, Permissions-Policy
+[x] Listagem de pastas desligada; arquivos ocultos e de backup bloqueados
+[x] Links externos com rel="noopener"
+[ ] Ativar verificação em 2 etapas (2FA) na Hostinger e no Registro.br
+[ ] Guardar uma cópia deste pacote no Google Drive (backup)
+
+
+DEPOIS DE PUBLICAR
+---------------------------------------------------------
+- Teste no celular: formulários, botões de WhatsApp, link da NEX, abas do menu.
+- Teste a segurança em https://securityheaders.com (meta: nota A).
+- Teste a velocidade em https://pagespeed.web.dev
+- Cadastre o site no Google Search Console e envie o sitemap.xml.
+- Teste a prévia do link no WhatsApp/Instagram (imagem de compartilhamento).
+- Coloque o link no perfil do Google Meu Negócio e no Instagram.
+
+
+SE FOR ANUNCIAR (Meta Pixel / Google Ads / Analytics)
+---------------------------------------------------------
+Os códigos de rastreamento NÃO estão instalados. Ao instalar:
+- Liberar os domínios deles no Content-Security-Policy do .htaccess
+  (ex.: connect.facebook.net, www.googletagmanager.com);
+- Adicionar um aviso de cookies;
+- Atualizar a seção "Cookies" da Política de Privacidade.
+
+
+CONTATOS USADOS NO SITE
+---------------------------------------------------------
+WhatsApp: +55 87 99130-2323
+Instagram: @conexao_assessoria
+NEX: https://crm.nexintelligence.com.br/
+Endereço: Galeria Manhattan, salas 07 e 12 · Petrolina-PE
